@@ -32,7 +32,6 @@ public class Review {
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "product_id", nullable = false)
-   // @Column(nullable = false) // we can give like this also instead of @JoinColumn
     private Product product;
 
     @ManyToOne

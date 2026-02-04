@@ -14,7 +14,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
+// @EqualsAndHashCode
 public class Product {
 
     @Id
@@ -51,6 +51,7 @@ public class Product {
 
     private String Sizes;
 
+    @OneToMany(mappedBy = "product",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Review> reviews = new ArrayList<>();
 
 

@@ -5,8 +5,6 @@ import lombok.*;
 
 import jakarta.validation.constraints.NotNull;
 
-
-
 @Entity
 @Getter
 @Setter
