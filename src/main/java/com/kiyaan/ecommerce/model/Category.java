@@ -10,10 +10,10 @@ import jakarta.validation.constraints.NotNull;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
+// @EqualsAndHashCode
 public class Category {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
@@ -24,6 +24,7 @@ public class Category {
     private String categoryId;
 
     @ManyToOne
+    @JoinColumn(name = "parent_category_id")
     private Category parentCategory;
 
     @NotNull

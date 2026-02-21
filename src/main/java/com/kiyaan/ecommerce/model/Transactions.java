@@ -21,6 +21,8 @@ public class Transactions {
     @ManyToOne
     private User customer;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id")
     private Order order;
 
     @ManyToOne

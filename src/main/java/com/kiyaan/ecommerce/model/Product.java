@@ -1,8 +1,9 @@
 package com.kiyaan.ecommerce.model;
 
+import com.kiyaan.ecommerce.model.Category;
 
 import jakarta.persistence.*;
-import jdk.jfr.Category;
+//import jdk.jfr.Category;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -39,6 +40,10 @@ public class Product {
     private List<String> images = new ArrayList<>();
 
     private int numRatings;
+
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private Order order;
 
     @ManyToOne
     private Category category;
